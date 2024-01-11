@@ -1,0 +1,122 @@
+:root{
+--primary-Red: hsl(0, 78%, 62%);
+--primary-Cyan: hsl(180, 62%, 55%);
+--primary-Orange: hsl(34, 97%, 64%);
+--primary-Blue: hsl(212, 86%, 64%);
+
+--secondary-Very-Dark-Blue: hsl(234, 12%, 34%);
+--secondary-Grayish-Blue: hsl(229, 6%, 66%);
+--seconary-Very-Light-Gray: hsl(0, 0%, 98%);
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--seconary-Very-Light-Gray);
+}
+
+.card{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+.card__title{
+    font-size: 1.7rem;
+    font-weight: 200;
+    line-height: 1.5;
+}
+
+.card__title--bold{
+    font-weight: 600;
+}
+
+.card__paragraph{
+    line-height: 1.5;   
+    color: var(--secondary-Grayish-Blue);
+    margin-top: 1.5rem;
+}
+
+.card__container{
+    padding-top: 80px;
+    text-align: left;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4,1fr);
+    grid-template-areas: 
+    "card1"
+    "card2"
+    "card3"
+    "card4";
+
+    justify-items: center;
+    gap: 2.5rem;
+}
+
+.card__item{
+    width: 90%;
+    max-width: 350px;
+    padding: 1.5rem 1.7rem;
+    border-radius: 6px;
+    border-top: 4px solid var(--primary-Cyan);
+    box-shadow: 0 4px 20px -6px hsl(212, 86%, 64%, .5);
+
+    grid-area: card1;
+}
+
+.card__item:nth-child(2){
+    grid-area: card2;
+    border-top: 4px solid var(--primary-Red);
+}
+
+.card__item:nth-child(3){
+    grid-area: card3;
+    border-top: 4px solid var(--primary-Orange);
+}
+
+.card__item:nth-child(4){
+    grid-area: card4;
+    border-top: 4px solid var(--primary-Blue);
+}
+
+.card__name{
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+}
+
+.card__copy{
+    color: var(--secondary-Very-Dark-Blue);
+    font-weight: 200;
+    padding-bottom: 40px;
+}
+
+.card__figure{
+    width: max-content;
+    margin-left: auto;
+}
+
+.card__img{
+    display: block;
+}
+
+@media (min-width:760px) {
+    .card__container{
+
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+        ".      card1       ."
+        "card2  card1   card3"
+        "card2  card4   card3"
+        ".      card4       .";
+    
+        gap: 2rem;
+    }
+}
